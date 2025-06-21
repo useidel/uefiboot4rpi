@@ -34,6 +34,10 @@ Planned for the future
 
 1. Fully automate the setup for RPiv4 - including the UEFI part
 2. Be more flexible regarding the assumptions
-3. Cover [RPiv3](https://github.com/pftf/RPi3) - RPiv5 seems to be a lost case due to the [here](https://github.com/worproject/rpi5-uefi)
+3. Cover [RPiv3](https://github.com/pftf/RPi3)
+
+Unclear:
+
+RPiv5 seems to be a lost case due to [here](https://github.com/worproject/rpi5-uefi) ... let's keep watching if things change
 
 
