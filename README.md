@@ -41,6 +41,8 @@ wget -nd https://github.com/pftf/RPi4/releases/download/v1.42/RPi4_UEFI_Firmware
 ````
 
 4. Right now the script does not everything for you. You still need to configure the UEFI setup after the first boot. That requires a monitor and keyboard access. 
+That includes disabling the 3GB RAM limit, configuring the SystemTable to use "ACPI + DeviceTree" and to configure the default boot option using the file `/boot/efi/EFI/debian/grubaa64.efi`.
+In case of more help please check [here](https://forum.manjaro.org/t/raspberry-pi-4-manjaro-on-uefi-firmware-with-generic-arm-kernel/127589)
 
 Planned for the future
 
