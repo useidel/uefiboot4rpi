@@ -1,6 +1,14 @@
 # uefiboot4rpi
 This will contain some guidance and commands to harmless switch from the traditional [u-boot](https://u-boot.org/) based setup for [Raspbery Pi OS](https://www.raspberrypi.com/software/) to an [UEFI](https://uefi.org/) one (including [Grub](https://www.gnu.org/software/grub/))
 
+Before going into details I want to give a big applause to the people behind the following web pages.
+
+[Raspberry Pi 4 UEFI Booting](https://community.tmpdir.org/t/raspberry-pi-4-uefi-booting/377)
+[Installing Debian ARM64 on a Raspberry Pi 3 in UEFI mode](https://pete.akeo.ie/2019/07/installing-debian-arm64-on-raspberry-pi.html)
+[Raspberry Pi 4 : Manjaro on UEFI firmware with “Generic” ARM kernel](https://forum.manjaro.org/t/raspberry-pi-4-manjaro-on-uefi-firmware-with-generic-arm-kernel/127589)
+
+The instructions/discussions/text where is the foundation of what I can provide here. Thank you!!
+
 At the moment it covers only the RaspberryPi 4 family (Pi4, Pi400 and Pi4-Compute) and assumes that the baseline is the [SD image provided by the Raspberry Pi foundation](https://www.raspberrypi.com/software/operating-systems/).
 
 Here are more details about the assumptions by the script/guidance
