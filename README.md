@@ -3,13 +3,15 @@ This will contain some guidance and commands to harmless switch from the traditi
 
 Before going into details I want to give a big applause to the people behind the following web pages.
 
-[Raspberry Pi 4 UEFI Booting](https://community.tmpdir.org/t/raspberry-pi-4-uefi-booting/377)
+- [Raspberry Pi 4 UEFI Booting](https://community.tmpdir.org/t/raspberry-pi-4-uefi-booting/377)
 
-[Installing Debian ARM64 on a Raspberry Pi 3 in UEFI mode](https://pete.akeo.ie/2019/07/installing-debian-arm64-on-raspberry-pi.html)
+- [Installing Debian ARM64 on a Raspberry Pi 3 in UEFI mode](https://pete.akeo.ie/2019/07/installing-debian-arm64-on-raspberry-pi.html)
 
-[Raspberry Pi 4 : Manjaro on UEFI firmware with “Generic” ARM kernel](https://forum.manjaro.org/t/raspberry-pi-4-manjaro-on-uefi-firmware-with-generic-arm-kernel/127589)
+- [Raspberry Pi 4 : Manjaro on UEFI firmware with “Generic” ARM kernel](https://forum.manjaro.org/t/raspberry-pi-4-manjaro-on-uefi-firmware-with-generic-arm-kernel/127589)
 
-The instructions/discussions/text where is the foundation of what I can provide here. Thank you!!
+The instructions/discussions/text where is the foundation of what I can provide here. Thank you all!!
+
+
 
 At the moment it covers only the RaspberryPi 4 family (Pi4, Pi400 and Pi4-Compute) and assumes that the baseline is the [SD image provided by the Raspberry Pi foundation](https://www.raspberrypi.com/software/operating-systems/).
 
