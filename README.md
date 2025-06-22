@@ -49,7 +49,11 @@ In case of more help please check [here](https://forum.manjaro.org/t/raspberry-p
 
 Boot you Raspberry Pi with standard SD image. Login and make yourself too `root`. Copy/download the script and simply execute it. You can also execute the steps yourself by simply copying the corresponding lines. 
 Once done, reboot the Raspberry Pi and hit `ESC` to enter the UEFI configuration. Disable the 3GB RAM Limitation and set System Table to  ACPI + DeviceTree.
+Select: Device Manager -> Raspberry Pi Configuration -> Advanced Configuration. 
+![screenshot](assets/images/uefi.rpi.system.config.jpg "UEFI System Config")
+
 Also, add an Boot entry which points to `efi/EFI/debian/grubaa64.efi` on your first partition. Make sure that is entry is the default. And yes, you may want to delete all the other ones. 
+Select: Boot Options and the corresponding sub menus
 
 ````
 # efibootmgr -v
