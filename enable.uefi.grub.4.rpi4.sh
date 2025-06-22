@@ -6,7 +6,7 @@ export PATH
 apt update && apt -y upgrade
 
 # now install the needed packages
-apt -y install grub2-common grub-efi-arm64-bin grub-efi-arm64 grub-efi-arm64-signed grub-common
+apt -y install grub2-common grub-efi-arm64-bin grub-efi-arm64 grub-efi-arm64-signed grub-common wget unzip
 
 # Not sure if we really need the stuff in /boot/firmware but it does not harm to save it
 # We will re-use the partition for the EFI setup
