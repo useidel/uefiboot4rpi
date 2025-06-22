@@ -56,6 +56,15 @@ Do not forget to save your changes with "F10".
 Also, add an Boot entry which points to `efi/EFI/debian/grubaa64.efi` on your first partition. Make sure that is entry is the default. And yes, you may want to delete all the other ones. 
 Select: Boot Device Manager -> Boot Options and the corresponding sub menus
 
+![screenshot](assets/images/boot.add.1.jgp "Boot Add 1")
+![screenshot](assets/images/boot.add.2.jgp "Boot Add 2")
+![screenshot](assets/images/boot.add.3.jgp "Boot Add 3")
+![screenshot](assets/images/boot.add.4.jgp "Boot Add 4")
+
+Again, don't forget to save your changes with "F10".
+
+This is how it could look like once booted successfully. ;-)
+
 ````
 # efibootmgr -v
 BootCurrent: 0001
@@ -67,15 +76,13 @@ Boot0006  UEFI Shell    FvVol(9a15aa37-d555-4a4e-b541-86391ff68164)/FvFile(7c04a
 # 
 ````
 
-Do not forget to save your changes with "F10".
-
-
 ## What else?
 
 Tested with
 
 - [Official RaspberryPI OS (64bit) (bookworm)](https://www.raspberrypi.com/software/operating-systems/#raspberry-pi-os-64-bit)
 - [Tested RaspberryPI Debian Images (64bit) (bookworm, trixie)](https://raspi.debian.net/tested-images/)
+- [Armbian for Raspberry Pi](https://www.armbian.com/rpi4b/)
 
 Planned for the future
 
