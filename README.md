@@ -51,6 +51,17 @@ Boot you Raspberry Pi with standard SD image. Login and make yourself too `root`
 Once done, reboot the Raspberry Pi and hit `ESC` to enter the UEFI configuration. Disable the 3GB RAM Limitation and set System Table to  ACPI + DeviceTree.
 Also, add an Boot entry which points to `efi/EFI/debian/grubaa64.efi` on your first partition. Make sure that is entry is the default. And yes, you may want to delete all the other ones. 
 
+````
+# efibootmgr -v
+BootCurrent: 0001
+Timeout: 5 seconds
+BootOrder: 0000,0006,0001
+Boot0000* UiApp FvVol(9a15aa37-d555-4a4e-b541-86391ff68164)/FvFile(462caa21-7614-4503-836e-8ab6f4662331)
+Boot0001* Grub for RaspberryPi OS       VenHw(100c2cfa-b586-4198-9b4c-1683d195b1da)/HD(1,MBR,0xefb0edee,0x4000,0x100000)/File(\EFI\debian\grubaa64.efi)
+Boot0006  UEFI Shell    FvVol(9a15aa37-d555-4a4e-b541-86391ff68164)/FvFile(7c04a583-9e3e-4f1c-ad65-e05268d0b4d1)
+# 
+````
+
 ## What else?
 
 Planned for the future
