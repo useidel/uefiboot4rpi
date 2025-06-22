@@ -72,6 +72,11 @@ Do not forget to save your changes with "F10".
 
 ## What else?
 
+Tested with
+
+- [Official RaspberryPI OS (64bit) (bookworm)](https://www.raspberrypi.com/software/operating-systems/#raspberry-pi-os-64-bit)
+- [Tested RaspberryPI Debian Images (64bit) (bookworm, trixie)](https://raspi.debian.net/tested-images/)
+
 Planned for the future
 
 1. Fully automate the setup for RPiv4 - including the UEFI part
