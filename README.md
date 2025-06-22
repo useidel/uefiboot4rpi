@@ -61,10 +61,10 @@ Do not forget to save your changes with "F10".
 Also, add an Boot entry which points to `efi/EFI/debian/grubaa64.efi` on your first partition. Make sure that is entry is the default. And yes, you may want to delete all the other ones. 
 Select: Boot Device Manager -> Boot Options and the corresponding sub menus
 
-![screenshot](assets/images/boot.add.1.jgp "Boot Add 1")
-![screenshot](assets/images/boot.add.2.jgp "Boot Add 2")
-![screenshot](assets/images/boot.add.3.jgp "Boot Add 3")
-![screenshot](assets/images/boot.add.4.jgp "Boot Add 4")
+![screenshot](assets/images/boot.add.1.jpg "Boot Add 1")
+![screenshot](assets/images/boot.add.2.jpg "Boot Add 2")
+![screenshot](assets/images/boot.add.3.jpg "Boot Add 3")
+![screenshot](assets/images/boot.add.4.jpg "Boot Add 4")
 
 Again, don't forget to save your changes with "F10".
 
