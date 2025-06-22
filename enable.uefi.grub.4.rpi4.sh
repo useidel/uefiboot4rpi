@@ -45,14 +45,6 @@ sync
 cd
 umount /tmp/mnt
 
-# Creating the mountpoint for EFI and update the /etc/fstab
-mkdir /boot/efi
-perl -pi -e 's/firmware/efi/g' /etc/fstab
-# You may want to change the mount options as well from "default" -> "noexec,nodev,noatime"
-
-# Your systemd may want be properly be informed about the content change of /etc/fstab
-systemctl daemon-reload 
-
 # Now changed the type of partition 1 to "uefi" and also mark it as bootable
 # the latter is probably not needed - but does not harm and could be handy for reinstallations
 fdisk $MYDEV << EOF
@@ -66,8 +58,28 @@ EOF
 
 # Tell the kernel to reload the new partition table .. just in case
 partprobe
-# create a filesystem on the EFI partition and mount it
+# create a filesystem on the EFI partition 
 mkfs.fat -n EFI $MYPART1
+
+# Creating the mountpoint for EFI and make a backup of the /etc/fstab
+cp /etc/fstab /etc/fstab.ORIG
+mkdir /boot/efi
+# if the fstab uses filesystem labels instead of devices
+grep 'boot/firmware' /etc/fstab |grep LABEL > /dev/null
+if [ $? -eq 0 ]
+then
+	grep -v 'boot/firmware' /etc/fstab > /tmp/myfstab
+	grep 'boot/firmware' /etc/fstab | sed 's/LABEL=.*/LABEL=EFI/' >> /tmp/myfstab
+	cp /tmp/myfstab /etc/fstab
+fi
+# and changing the mountpoint ... after all that fs label stuff
+perl -pi -e 's/firmware/efi/g' /etc/fstab
+# You may want to change the mount options as well from "default" -> "noexec,nodev,noatime"
+
+# Your systemd may want be properly be informed about the content change of /etc/fstab
+systemctl daemon-reload 
+
+# mount the EFI filesystem
 mount $MYPART1 /boot/efi
 # actually a "mount -a" should now work as well
 
