@@ -41,7 +41,7 @@ EOF
 # Tell the kernel to reload the new partition table .. just in case
 partprobe
 # create a filesystem on the EFI partition and mount it
-mkfs.fat /dev/mmcblk0p1
+mkfs.fat -n EFI /dev/mmcblk0p1
 mount /dev/mmcblk0p1 /boot/efi
 # actually a "mount -a" should now work as well
 
