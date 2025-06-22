@@ -51,7 +51,7 @@ In case of more help please check [here](https://forum.manjaro.org/t/raspberry-p
 
 - Login and make yourself too `root`. 
 
-- Copy/download the script and simply execute it. You can also execute the steps yourself by simply copying the corresponding lines. 
+- Copy/download the script `enable.uefi.grub.4.rpi4.sh` and simply execute it. You can also execute the steps yourself by simply copying the corresponding lines. 
 
 - Once done, reboot the Raspberry Pi and hit `ESC` to enter the UEFI configuration. Disable the 3GB RAM Limitation and set System Table to  ACPI + DeviceTree.
 Select: Device Manager -> Raspberry Pi Configuration -> Advanced Configuration. 
