@@ -47,8 +47,13 @@ In case of more help please check [here](https://forum.manjaro.org/t/raspberry-p
 
 ## How to use it?
 
-Boot you Raspberry Pi with standard SD image. Login and make yourself too `root`. Copy/download the script and simply execute it. You can also execute the steps yourself by simply copying the corresponding lines. 
-Once done, reboot the Raspberry Pi and hit `ESC` to enter the UEFI configuration. Disable the 3GB RAM Limitation and set System Table to  ACPI + DeviceTree.
+- Boot you Raspberry Pi with standard SD image. 
+
+- Login and make yourself too `root`. 
+
+- Copy/download the script and simply execute it. You can also execute the steps yourself by simply copying the corresponding lines. 
+
+- Once done, reboot the Raspberry Pi and hit `ESC` to enter the UEFI configuration. Disable the 3GB RAM Limitation and set System Table to  ACPI + DeviceTree.
 Select: Device Manager -> Raspberry Pi Configuration -> Advanced Configuration. 
 ![screenshot](assets/images/uefi.rpi.system.config.jpg "UEFI System Config")
 Do not forget to save your changes with "F10".
