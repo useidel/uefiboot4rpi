@@ -1,6 +1,8 @@
 # uefiboot4rpi
 This will contain some guidance and commands to harmless switch from the traditional [u-boot](https://u-boot.org/) based setup for [Raspbery Pi OS](https://www.raspberrypi.com/software/) to an [UEFI](https://uefi.org/) one (including [Grub](https://www.gnu.org/software/grub/))
 
+## Prologue
+
 Before going into details I want to give a big applause to the people behind the following web pages.
 
 - [Raspberry Pi 4 UEFI Booting](https://community.tmpdir.org/t/raspberry-pi-4-uefi-booting/377)
@@ -10,7 +12,6 @@ Before going into details I want to give a big applause to the people behind the
 - [Raspberry Pi 4 : Manjaro on UEFI firmware with “Generic” ARM kernel](https://forum.manjaro.org/t/raspberry-pi-4-manjaro-on-uefi-firmware-with-generic-arm-kernel/127589)
 
 The instructions/discussions/text where is the foundation of what I can provide here. Thank you all!!
-
 
 
 At the moment it covers only the RaspberryPi 4 family (Pi4, Pi400 and Pi4-Compute) and assumes that the baseline is the [SD image provided by the Raspberry Pi foundation](https://www.raspberrypi.com/software/operating-systems/).
@@ -43,6 +44,14 @@ wget -nd https://github.com/pftf/RPi4/releases/download/v1.42/RPi4_UEFI_Firmware
 4. Right now the script does not everything for you. You still need to configure the UEFI setup after the first boot. That requires a monitor and keyboard access. 
 That includes disabling the 3GB RAM limit, configuring the SystemTable to use "ACPI + DeviceTree" and to configure the default boot option using the file `/boot/efi/EFI/debian/grubaa64.efi`.
 In case of more help please check [here](https://forum.manjaro.org/t/raspberry-pi-4-manjaro-on-uefi-firmware-with-generic-arm-kernel/127589)
+
+## How to use it?
+
+Boot you Raspberry Pi with standard SD image. Login and make yourself too `root`. Copy/download the script and simply execute it. You can also execute the steps yourself by simply copying the corresponding lines. 
+Once done, reboot the Raspberry Pi and hit `ESC` to enter the UEFI configuration. Disable the 3GB RAM Limitation and set System Table to  ACPI + DeviceTree.
+Also, add an Boot entry which points to `efi/EFI/debian/grubaa64.efi` on your first partition. Make sure that is entry is the default. And yes, you may want to delete all the other ones. 
+
+## What else?
 
 Planned for the future
 
