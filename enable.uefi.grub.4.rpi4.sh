@@ -2,7 +2,18 @@
 PATH=/bin:/sbin:/usr/sbin:/usr/sbin
 export PATH
 
+# ATM we focus on Raspberry Pi hardware only
+grep Raspberry /proc/device-tree/model > /dev/null
+if [ $? -ne 0 ]
+then
+	echo " Does not look like we are an Raspberry Pi hardware"
+	echo " Please x-check"
+	echo " Fading away for now"
+	exit 1
+fi
+
 # Pseude devices which should not cause harm
+# but also help to not destroy anything 
 MYDEV=/dev/MYDEV
 MYPART1=`echo $MYDEV|sed 's/$/p1/g'`
 
