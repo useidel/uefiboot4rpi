@@ -89,7 +89,7 @@ Tested with
 
 Planned for the future
 
-1. Fully automate the setup for RPiv4 - including the UEFI part
+1. Fully automate the setup -> including the UEFI part
 2. Be more flexible regarding the assumptions
 
 Unclear:
