@@ -46,6 +46,8 @@ wget -nd https://github.com/pftf/RPi4/releases/download/v1.42/RPi4_UEFI_Firmware
 That includes disabling the 3GB RAM limit, configuring the SystemTable to use "ACPI + DeviceTree" and to configure the default boot option using the file `/boot/efi/EFI/debian/grubaa64.efi`.
 In case of more help please check [here](https://forum.manjaro.org/t/raspberry-pi-4-manjaro-on-uefi-firmware-with-generic-arm-kernel/127589)
 
+Sidenote: recent tests on RPi3 look like the settings for RAM and SystemTable are correct and don't need any changes. However, the setup of the boot entry to point Grub seems to be a bit iffy. 
+
 ## How to use it?
 
 - Boot you Raspberry Pi with standard SD image. 
@@ -59,12 +61,15 @@ Select: Device Manager -> Raspberry Pi Configuration -> Advanced Configuration.
 ![screenshot](assets/images/uefi.rpi.system.config.jpg "UEFI System Config")
 Do not forget to save your changes with "F10".
 
+As said above: this is probably not needed on Raspberry Pi 3 - but x-checking does not harm
+
 Also, add an Boot entry which points to `efi/EFI/debian/grubaa64.efi` on your first partition. Make sure that is entry is the default. And yes, you may want to delete all the other ones. 
 Select: Boot Device Manager -> Boot Options and the corresponding sub menus
 
 ![screenshot](assets/images/uefi.boot.maint.jpg "UEFI Boot Maintenance")
 
-Again, don't forget to save your changes with "F10".
+Again, don't forget to save your changes with "F10". 
+Please do check if the boot entry you have created is the default. That seems to be a bit flaky on Raspberry Pi 3. 
 
 This is how it could look like once booted successfully. ;-)
 
