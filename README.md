@@ -14,7 +14,8 @@ Before going into details I want to give a big applause to the people behind the
 The instructions/discussions/text where is the foundation of what I can provide here. Thank you all!!
 
 
-At the moment it covers only the RaspberryPi 4 family (Pi4, Pi400 and Pi4-Compute) and assumes that the baseline is the [SD image provided by the Raspberry Pi foundation](https://www.raspberrypi.com/software/operating-systems/).
+At the moment it covers only the RaspberryPi 3 and 4 hardware models and assumes that the baseline is the [SD image provided by the Raspberry Pi foundation](https://www.raspberrypi.com/software/operating-systems/).
+For Raspberry Pi 5 please scroll to the end of this page.
 
 Here are more details about the assumptions by the script/guidance
 
@@ -90,7 +91,6 @@ Planned for the future
 
 1. Fully automate the setup for RPiv4 - including the UEFI part
 2. Be more flexible regarding the assumptions
-3. Cover [RPiv3](https://github.com/pftf/RPi3)
 
 Unclear:
 

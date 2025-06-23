@@ -15,6 +15,9 @@ fi
 
 # Pseude devices which should not cause harm
 # but also help to not destroy anything 
+MYPIHW=1
+MYUEFIFWLINK=""
+MYUEFIFW=""
 MYDEV=/dev/MYDEV
 MYPART1=`echo $MYDEV|sed 's/$/p1/g'`
 
@@ -39,6 +42,23 @@ else
 	MYDEV=`echo $MYPART| sed 's/p1$//'`
 fi
 
+# which PI HW model do we have?
+# only 3 and 4 are supported
+MYPIHW=`grep Raspberry /proc/device-tree/model|awk '{print $3}'`
+case $MYPIHW in
+	3)
+	MYUEFIFWLINK=https://github.com/pftf/RPi3/releases/download/v1.39/RPi3_UEFI_Firmware_v1.39.zip
+	;;
+	4)
+	MYUEFIFWLINK=https://github.com/pftf/RPi4/releases/download/v1.42/RPi4_UEFI_Firmware_v1.42.zip
+	;;
+	*)
+	echo " This hardware model - $MYPIHW - is not supported"
+	exit 1
+	;;
+esac
+
+MYUEFIFW=`basename $MYUEFIFWLINK`
 
 # Getting up-to-date
 apt update && apt -y upgrade
@@ -100,10 +120,10 @@ mount $MYPART1 /boot/efi
 
 # Get the UEFI firmeware files for the RPiv4 family
 cd
-wget -nd https://github.com/pftf/RPi4/releases/download/v1.42/RPi4_UEFI_Firmware_v1.42.zip   
+wget -nd $MYUEFIFWLINK
 # and place it under /boot/efi
 cd /boot/efi
-unzip /root/RPi4_UEFI_Firmware_v1.42.zip 
+unzip /root/$MYUEFIFW
 
 # Ok, we need to create that one directory ...
 mkdir /boot/efi/EFI
