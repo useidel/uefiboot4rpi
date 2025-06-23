@@ -3,6 +3,7 @@ PATH=/bin:/sbin:/usr/sbin:/usr/sbin
 export PATH
 
 # ATM we focus on Raspberry Pi hardware only
+# instead of /proc one can also use sysfs -> /sys/firmware/devicetree/base/model
 grep Raspberry /proc/device-tree/model > /dev/null
 if [ $? -ne 0 ]
 then
@@ -42,8 +43,11 @@ fi
 # Getting up-to-date
 apt update && apt -y upgrade
 
-# now install the needed packages
-apt -y install grub2-common grub-efi-arm64-bin grub-efi-arm64 grub-efi-arm64-signed grub-common wget unzip
+# install wget and unzip for downloading and unpacking the efi firmware files
+apt -y install wget unzip
+
+# now install the needed packages for the actual boot
+apt -y install grub2-common grub-efi-arm64-bin grub-efi-arm64 grub-efi-arm64-signed grub-common
 
 # Not sure if we really need the stuff in /boot/firmware but it does not harm to save it
 # We will re-use the partition for the EFI setup
