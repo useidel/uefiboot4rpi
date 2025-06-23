@@ -44,7 +44,7 @@ fi
 
 # which PI HW model do we have?
 # only 3 and 4 are supported
-MYPIHW=`grep Raspberry /proc/device-tree/model|awk '{print $3}'`
+MYPIHW=`cat /proc/device-tree/model | grep Raspberry | awk '{print $3}'`
 case $MYPIHW in
 	3)
 	MYUEFIFWLINK=https://github.com/pftf/RPi3/releases/download/v1.39/RPi3_UEFI_Firmware_v1.39.zip
