@@ -33,7 +33,7 @@ Device         Boot   Start      End  Sectors  Size Id Type
 # 
 ````
 
-2. The running RaspberryPiOS recognizes the SD as /dev/mmcblk0 (see also above)
+2. The running RaspberryPiOS recognizes the SD as /dev/mmcblk0 or similar (see also above)
 
 3. The system has internet access to download the UEFI firmware files and the package wget installed 
 
