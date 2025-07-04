@@ -104,7 +104,7 @@ grep 'boot/firmware' /etc/fstab |grep LABEL > /dev/null
 if [ $? -eq 0 ]
 then
 	grep -v 'boot/firmware' /etc/fstab > /tmp/myfstab
-	grep 'boot/firmware' /etc/fstab | sed 's/LABEL=.*/LABEL=EFI/' >> /tmp/myfstab
+	grep 'boot/firmware' /etc/fstab | sed 's/LABEL=.[A-Z]* /LABEL=EFI /' >> /tmp/myfstab
 	cp /tmp/myfstab /etc/fstab
 fi
 # and changing the mountpoint ... after all that fs label stuff
