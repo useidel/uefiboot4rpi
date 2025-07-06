@@ -42,6 +42,14 @@ else
 	MYDEV=`echo $MYPART| sed 's/p1$//'`
 fi
 
+# for now we need the command strings
+which strings
+if [ $? -ne 0 ]
+then
+        echo " We need  the package binutils"
+	apt update && apt -y install binutils
+fi
+
 # which PI HW model do we have?
 # only 3 and 4 are supported
 MYPIHW=`cat /proc/device-tree/model | strings | grep Raspberry | awk '{print $3}'`
