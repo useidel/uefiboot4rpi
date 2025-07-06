@@ -78,15 +78,18 @@ apt -y install wget unzip
 apt -y install grub2-common grub-efi-arm64-bin grub-efi-arm64 grub-efi-arm64-signed grub-common
 
 # Not sure if we really need the stuff in /boot/firmware but it does not harm to save it
+# We do the saving in an new directory and will later bind-mount it
 # We will re-use the partition for the EFI setup
 umount /boot/firmware
 mkdir /tmp/mnt
 mount $MYPART1 /tmp/mnt
 cd /tmp/mnt
-cp -a * /boot/firmware/
+mkdir /boot/firmware.ORIG
+cp -a * /boot/firmware.ORIG
 sync
 cd
 umount /tmp/mnt
+mount mount --bind /boot/firmware.ORIG /boot/firmware
 
 # Now changed the type of partition 1 to "uefi" and also mark it as bootable
 # the latter is probably not needed - but does not harm and could be handy for reinstallations
@@ -118,6 +121,9 @@ fi
 # and changing the mountpoint ... after all that fs label stuff
 perl -pi -e 's/firmware/efi/g' /etc/fstab
 # You may want to change the mount options as well from "default" -> "noexec,nodev,noatime"
+
+# Add the bind mount for /boot/firmware
+echo '/boot/firmware.ORIG /boot/firmware none defaults,bind 0 0' >> /etc/fstab
 
 # Your systemd may want be properly be informed about the content change of /etc/fstab
 systemctl daemon-reload 

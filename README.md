@@ -94,7 +94,7 @@ Tested with
 
 Planned for the future
 
-1. Fully automate the setup -> including the UEFI part
+1. Add more automation the setup -> including the UEFI part
 2. Be more flexible regarding the assumptions
 
 Unclear:
