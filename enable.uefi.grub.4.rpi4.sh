@@ -43,7 +43,7 @@ else
 fi
 
 # for now we need the command strings
-which strings
+which strings > /dev/null 2>&1
 if [ $? -ne 0 ]
 then
         echo " We need  the package binutils"
