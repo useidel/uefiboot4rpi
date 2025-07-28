@@ -39,7 +39,7 @@ then
 	exit 1
 else
 	MYPART1=`mount|grep 'boot/firmware' |awk '{print $1}'`
-	MYDEV=`echo $MYPART| sed 's/p1$//'`
+	MYDEV=`echo $MYPART1| sed 's/p1$//'`
 fi
 
 # for now we need the command strings
