@@ -89,7 +89,7 @@ cp -a * /boot/firmware.ORIG
 sync
 cd
 umount /tmp/mnt
-mount mount --bind /boot/firmware.ORIG /boot/firmware
+mount --bind /boot/firmware.ORIG /boot/firmware
 
 # Now changed the type of partition 1 to "uefi" and also mark it as bootable
 # the latter is probably not needed - but does not harm and could be handy for reinstallations
@@ -98,7 +98,7 @@ a
 1
 t
 1
-uefi
+ef
 w
 EOF
 
