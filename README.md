@@ -58,7 +58,7 @@ Sidenote: recent tests on RPi3 look like the settings for RAM and SystemTable ar
 
 - Once done, reboot the Raspberry Pi and hit `ESC` to enter the UEFI configuration. Disable the 3GB RAM Limitation and set System Table to  ACPI + DeviceTree.
 Select: Device Manager -> Raspberry Pi Configuration -> Advanced Configuration. 
-![screenshot](assets/images/uefi.rpi.system.config.jpg "UEFI System Config")
+![screenshot](assets/images/uefi.rpi.system.config.new.jpg "UEFI System Config")
 Do not forget to save your changes with "F10".
 
 As said above: this is probably not needed on Raspberry Pi 3 - but x-checking does not harm
@@ -66,7 +66,7 @@ As said above: this is probably not needed on Raspberry Pi 3 - but x-checking do
 Also, add an Boot entry which points to `efi/EFI/debian/grubaa64.efi` on your first partition. Make sure that is entry is the default. And yes, you may want to delete all the other ones. 
 Select: Boot Device Manager -> Boot Options and the corresponding sub menus
 
-![screenshot](assets/images/uefi.boot.maint.jpg "UEFI Boot Maintenance")
+![screenshot](assets/images/uefi.boot.maint.new.jpg "UEFI Boot Maintenance")
 
 Again, don't forget to save your changes with "F10". 
 Please do check if the boot entry you have created is the default. That seems to be a bit flaky on Raspberry Pi 3. 
