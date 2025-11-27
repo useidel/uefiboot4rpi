@@ -88,7 +88,7 @@ Boot0006  UEFI Shell    FvVol(9a15aa37-d555-4a4e-b541-86391ff68164)/FvFile(7c04a
 
 Tested with
 
-- [Official RaspberryPI OS (64bit) (bookworm)](https://www.raspberrypi.com/software/operating-systems/#raspberry-pi-os-64-bit)
+- [Official RaspberryPI OS (64bit) (bookworm, trixie)](https://www.raspberrypi.com/software/operating-systems/)
 - [Tested RaspberryPI Debian Images (64bit) (bookworm, trixie)](https://raspi.debian.net/tested-images/)
 - [Armbian for Raspberry Pi](https://www.armbian.com/rpi4b/)
 
